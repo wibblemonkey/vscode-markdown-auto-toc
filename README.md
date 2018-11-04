@@ -32,9 +32,3 @@ Name                                  | Default Value        | Description
 * The configuration settings are loaded when the extension is activated, so any
   changes made don't take effect until the VS Code window is reloaded or
   restarted.
-
-## Release Notes
-
-### 0.0.1
-
-Initial release.
