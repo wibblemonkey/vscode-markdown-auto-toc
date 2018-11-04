@@ -1,6 +1,6 @@
 {
-    "name": "vscode-markdown-table-of-contents",
-    "displayName": "Markdown TOC",
+    "name": "vscode-markdown-auto-toc",
+    "displayName": "Markdown AutoTOC",
     "description": "Adds support for inserting an auto-generated table of contents to VS Code's built-in markdown preview using the [[TOC]] syntax.",
     "version": "0.0.1",
     "publisher": "wibblemonkey",
@@ -10,15 +10,15 @@
         "table of contents",
         "toc"
     ],
-    "icon": "logo/markdown-toc.png",
+    "icon": "logo/markdown-autotoc.png",
     "license": "MIT",
-    "homepage": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents/blob/master/README.md",
+    "homepage": "https://github.com/wibblemonkey/vscode-markdown-auto-toc/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents.git"
+        "url": "https://github.com/wibblemonkey/vscode-markdown-auto-toc.git"
     },
     "bugs": {
-        "url": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents/issues"
+        "url": "https://github.com/wibblemonkey/vscode-markdown-auto-toc/issues"
     },
     "engines": {
         "vscode": "^1.28.0"
@@ -29,6 +29,55 @@
     "activationEvents": [],
     "main": "./extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Markdown AutoTOC",
+            "properties": {
+                "markdownAutoTOC.maximumHeadingLevel": {
+                    "type": "integer",
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                    ],
+                    "enumDescriptions": [
+                        "Heading 1",
+                        "Heading 2",
+                        "Heading 3",
+                        "Heading 4",
+                        "Heading 5",
+                        "Heading 6"
+                    ],
+                    "minimum": 1,
+                    "maximum": 6,
+                    "default": 2,
+                    "description": "The maximum heading level to include in the generated table of contents."
+                },
+                "markdownAutoTOC.containerClass": {
+                    "type": "string",
+                    "default": "toc-container",
+                    "markdownDescription": "The HTML class to apply to the generated `<div/>` for the table of contents."
+                },
+                "markdownAutoTOC.header": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Include a heading above the generated table of contents."
+                },
+                "markdownAutoTOC.headerClass": {
+                    "type": "string",
+                    "default": "toc-container-header",
+                    "markdownDescription": "The HTML class to apply to the generated `<div/>` for the table of contents header."
+                },
+                "markdownAutoTOC.headerContent": {
+                    "type": "string",
+                    "default": "Contents",
+                    "description": "The header text to display above the table of contents."
+                }
+            }
+        },
         "markdown.markdownItPlugins": true
     },
     "scripts": {
@@ -43,6 +92,7 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
+        "js-htmlencode": "^0.3.0",
         "markdown-it-table-of-contents": "^0.4.3"
     }
 }
