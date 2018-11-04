@@ -1,5 +1,5 @@
 {
-    "name": "vscode-markdown-auto-toc",
+    "name": "markdown-auto-toc",
     "displayName": "Markdown AutoTOC",
     "description": "Adds support for inserting an auto-generated table of contents to VS Code's built-in markdown preview using the [[TOC]] syntax.",
     "version": "0.0.1",
