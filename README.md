@@ -1,7 +1,7 @@
 # Markdown TOC
 
 Markdown TOC is a VS Code extension that adds support for inserting an
-auto-generated table of contents to the built-in markdown preview using the [[TOC]]
+auto-generated table of contents to the built-in markdown preview using the `[[TOC]]`
 syntax.
 
 ## Features
