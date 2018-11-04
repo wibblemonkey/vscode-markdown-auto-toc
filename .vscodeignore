@@ -2,6 +2,10 @@
 .vscode-test/**
 test/**
 .gitignore
+.gitattributes
 jsconfig.json
 vsc-extension-quickstart.md
 .eslintrc.json
+*.code-workspace
+logo/logo.ifx
+screentogif/**

@@ -10,7 +10,7 @@
         "table of contents",
         "toc"
     ],
-    "icon": "logo/markdown-autotoc.png",
+    "icon": "logo/logo.png",
     "license": "MIT",
     "homepage": "https://github.com/wibblemonkey/vscode-markdown-auto-toc/blob/master/README.md",
     "repository": {
