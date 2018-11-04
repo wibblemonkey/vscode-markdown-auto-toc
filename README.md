@@ -1,8 +1,7 @@
-# Markdown AutoTOC
+[![](https://vsmarketplacebadge.apphb.com/version/wibblemonkey.markdown-auto-toc.svg)](https://marketplace.visualstudio.com/items?itemName=wibblemonkey.markdown-auto-toc)
 
-Markdown AutoTOC is a VS Code extension that adds support for inserting an
-auto-generated table of contents into the built-in markdown preview using the `[[TOC]]`
-syntax.
+Adds support for inserting an auto-generated table of contents into the built-in
+markdown preview using the `[[TOC]]` syntax.
 
 ![Markdown AutoTOC](images/example.gif)
 
