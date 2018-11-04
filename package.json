@@ -4,23 +4,31 @@
     "description": "Adds support for inserting an auto-generated table of contents to VS Code's built-in markdown preview using the [[TOC]] syntax.",
     "version": "0.0.1",
     "publisher": "wibblemonkey",
+    "keywords": [
+        "markdown",
+        "contents",
+        "table of contents",
+        "toc"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents.git"
+    },
+    "bugs": {
+        "url": "https://github.com/wibblemonkey/vscode-markdown-table-of-contents/issues"
+    },
     "engines": {
         "vscode": "^1.28.0"
     },
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
-    ],
+    "activationEvents": [],
     "main": "./extension",
     "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
+        "markdown.markdownItPlugins": true
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
@@ -32,5 +40,8 @@
         "eslint": "^4.11.0",
         "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "markdown-it-table-of-contents": "^0.4.3"
     }
 }
