@@ -14,17 +14,21 @@ for the table of contents itself and override the default HTML class applied to
 the `<div/>` container elements for both the table of contents and the title
 header.
 
+The extension also supports the Azure DevOps Wiki style table of contents token
+`[[_TOC_]]`. This is enabled by default but can be turned off if desired.
+
 ## Extension Settings
 
 This extension contributes the following settings:
 
-Name                                  | Default Value        | Description
---------------------------------------|----------------------|------------------------------------------------------------------------------------
-`markdownAutoTOC.maximumHeadingLevel` | 2                    | The maximum heading level to include in the generated table of contents
-`markdownAutoTOC.containerClass`      | toc-container        | The HTML class to apply to the generated `<div/>` for the table of contents.
-`markdownAutoTOC.header`              | true                 | Include a heading above the generated table of contents.
-`markdownAutoTOC.headerClass`         | toc-container-header | The HTML class to apply to the generated `<div/>` for the table of contents header.
-`markdownAutoTOC.headerContent`       | Contents             | The header text to display above the table of contents.
+Name                                                 | Default Value        | Description
+-----------------------------------------------------|----------------------|------------------------------------------------------------------------------------
+`markdownAutoTOC.maximumHeadingLevel`                | 2                    | The maximum heading level to include in the generated table of contents
+`markdownAutoTOC.containerClass`                     | toc-container        | The HTML class to apply to the generated `<div/>` for the table of contents.
+`markdownAutoTOC.header`                             | true                 | Include a heading above the generated table of contents.
+`markdownAutoTOC.headerClass`                        | toc-container-header | The HTML class to apply to the generated `<div/>` for the table of contents header.
+`markdownAutoTOC.headerContent`                      | Contents             | The header text to display above the table of contents.
+`markdownAutoTOC.enableAzureDevOpsWikiCompatibility` | true                 | Allow `[[_TOC_]]` as the token to generate the table of contents.
 
 ## Known Issues
 

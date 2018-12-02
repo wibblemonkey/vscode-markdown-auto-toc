@@ -2,6 +2,8 @@
 
 const vscode = require('vscode');
 const htmlEncode = require('js-htmlencode').htmlEncode;
+const removeMarkdown = require('remove-markdown');
+const striptags = require('striptags');
 
 const validHtmlClass = /^[a-z][a-z0-9_-]*$/i;
 
@@ -25,6 +27,8 @@ function buildMarkdownItTableOfContentsOptions(configuration) {
     options["includeLevel"] = buildIncludeLevelOptionFromConfiguration(configuration);
     options["containerClass"] = buildContainerClassOptionFromConfiguration(configuration);
     options["containerHeaderHtml"] = buildContainerHeaderHtmlOptionFromConfiguration(configuration);
+    options["markerPattern"] = buildMarkerPatternOptionFromConfiguration(configuration);
+    options["format"] = sanitizeHeading;
 
     return options;
 }
@@ -44,4 +48,13 @@ function buildContainerHeaderHtmlOptionFromConfiguration(configuration) {
         option = `<div class="${headerClass}">${htmlEncode(configuration.headerContent)}</div>`;
     }
     return option;
+}
+
+function buildMarkerPatternOptionFromConfiguration(configuration) {
+    var token = configuration.enableAzureDevOpsWikiCompatibility ? "(toc|_toc_)" : "toc";
+    return new RegExp(`^\\[\\[${token}\\]\\]`, "im");
+}
+
+function sanitizeHeading(heading) {
+    return removeMarkdown(striptags(heading));
 }

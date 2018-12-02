@@ -2,7 +2,7 @@
     "name": "markdown-auto-toc",
     "displayName": "Markdown AutoTOC",
     "description": "Adds support for inserting an auto-generated table of contents to VS Code's built-in markdown preview using the [[TOC]] syntax.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "wibblemonkey",
     "keywords": [
         "markdown",
@@ -75,6 +75,11 @@
                     "type": "string",
                     "default": "Contents",
                     "description": "The header text to display above the table of contents."
+                },
+                "markdownAutoTOC.enableAzureDevOpsWikiCompatibility": {
+                    "type": "boolean",
+                    "default": true,
+                    "markdownDescription": "Allow `[[_TOC_]]` as the token to generate the table of contents."
                 }
             }
         },
@@ -93,6 +98,8 @@
     },
     "dependencies": {
         "js-htmlencode": "^0.3.0",
-        "markdown-it-table-of-contents": "^0.4.3"
+        "markdown-it-table-of-contents": "^0.4.3",
+        "remove-markdown": "^0.3.0",
+        "striptags": "^3.1.1"
     }
 }
