@@ -4,6 +4,7 @@ const vscode = require('vscode');
 const htmlEncode = require('js-htmlencode').htmlEncode;
 const removeMarkdown = require('remove-markdown');
 const striptags = require('striptags');
+const emoji = require('node-emoji')
 
 const validHtmlClass = /^[a-z][a-z0-9_-]*$/i;
 
@@ -56,5 +57,9 @@ function buildMarkerPatternOptionFromConfiguration(configuration) {
 }
 
 function sanitizeHeading(heading) {
-    return removeMarkdown(striptags(heading));
+    return renderEmoji(removeMarkdown(striptags(heading)));
+}
+
+function renderEmoji(heading) {
+    return emoji.emojify(heading, () => '');
 }
