@@ -34,7 +34,7 @@ function buildMarkdownItTableOfContentsOptions(configuration) {
 }
 
 function buildIncludeLevelOptionFromConfiguration(configuration) {
-    return Array.from({length: configuration.maximumHeadingLevel}, (v, k) => k + 1);
+    return Array.from({length: configuration.maximumHeadingLevel}, (v, k) => k + 2);
 }
 
 function buildContainerClassOptionFromConfiguration(configuration) {
